@@ -40,5 +40,6 @@ Nothing to note.
 Two ports are specified in the `compose.yaml` file. The first is the default port for the Neo4j DB, the second is the bolt port. The bolt port is used for the Neo4j Browser. The default port is used for the Neo4j DB itself. The admin username and password are specified in the `compose.yaml` file in the `NEO4J_AUTH` environment variable formatted as `username/password`. Note: having "neo4j" as the username is required as it is the admin username.
 
 ## Issues
-Need to confirm if the BaseX version is correct. The latest tag is not the version specified in the study guide. I will need to confirm this with the module leader.
+- [ ] Need to confirm if the BaseX version is correct. The latest tag is not the version specified in the study guide. I will need to confirm this with the module leader.
+- [ ] Need to double-check that all the volumes specified in the `compose.yaml` are correct to ensure persisistence across the databases. 
 
