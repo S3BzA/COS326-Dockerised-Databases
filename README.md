@@ -26,11 +26,11 @@ If you are using this repo, note that I will use this README as a means of commu
 
 ### ObjectDB
 
-Object DB is not available on Docker. I have downloaded the ObjectDB version 2.9.0 from the official website and stuck that .zip into the `/objectdb` directory with a `Dockerfile` that the `compose.yaml` uses. This spins up the objectdb server.
+Object DB is not available on Docker. I have downloaded the ObjectDB version 2.9.0 from the official website and stuck that .zip into the `/objectdb` directory with a `Dockerfile` that the `compose.yaml` uses. This spins up the objectdb container.
 
 ### PostgreSQL
 
-Requires authentication, which is specified in the `compose.yaml` file.
+Requires authentication, which is specified in the compose.yaml file. Additionally, the ./initpg directory contains an init.sql file used to initialize the database with tables, data, enums, etc. This initialization script runs only if PostgreSQL detects that no database already exists. This ensures that the database is set up correctly on the first run but does not overwrite existing data on subsequent restarts.
 
 ### BaseX
 
