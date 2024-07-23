@@ -1,0 +1,50 @@
+services:
+  postgres:
+    image: postgres:16.3
+    environment:
+      POSTGRES_USER: "user"
+      POSTGRES_PASSWORD: "password123"
+      POSTGRES_DB: "mydatabase"
+    ports:
+      - "5432:5432"
+    volumes:
+      - COS326_pg_data:/var/lib/postgresql/data
+      - ./initpg:/docker-entrypoint-initdb.d
+
+  mongodb:
+    image: mongo:7.0.12
+    ports:
+      - "27017:27017"
+    volumes:
+      - COS326_mongo_data:/data/db
+
+  basex:
+    image: basex/basexhttp
+    ports:
+      - "1984:1984"
+    volumes:
+      - COS326_basex_data:/srv/BaseXData
+
+  neo4j:
+    image: neo4j:5.9.0
+    environment:
+      NEO4J_AUTH: "neo4j/password123" # user/password
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - COS326_neo4j_data:/data
+
+  objectdb:
+    build: ./objectdb
+    ports:
+      - "6136:6136"
+    volumes:
+      - COS326_objectdb_data:/var/lib/objectdb
+
+volumes:
+  COS326_pg_data:
+  COS326_mongo_data:
+  COS326_basex_data:
+  COS326_neo4j_data:
+  COS326_objectdb_data:
