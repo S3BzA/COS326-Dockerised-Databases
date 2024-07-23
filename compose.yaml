@@ -22,8 +22,12 @@ services:
     image: basex/basexhttp
     ports:
       - "1984:1984"
+      - "8984:8984"
+      - "8985:8985"
     volumes:
-      - COS326_basex_data:/srv/BaseXData
+      - COS326_basex_data:/srv/basex/data
+      - COS326_basex_repo:/srv/basex/repo
+      - COS326_basex_webapp:/srv/basex/webapp
 
   neo4j:
     image: neo4j:5.9.0
@@ -46,5 +50,7 @@ volumes:
   COS326_pg_data:
   COS326_mongo_data:
   COS326_basex_data:
+  COS326_basex_repo:
+  COS326_basex_webapp:
   COS326_neo4j_data:
   COS326_objectdb_data:
