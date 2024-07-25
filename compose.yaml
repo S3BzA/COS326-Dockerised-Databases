@@ -1,5 +1,5 @@
 services:
-  postgres:
+  postgres: # Postgres database
     image: postgres:16.3
     environment:
       POSTGRES_USER: "user"
@@ -11,14 +11,14 @@ services:
       - COS326_pg_data:/var/lib/postgresql/data
       - ./initpg:/docker-entrypoint-initdb.d
 
-  mongodb:
+  mongodb: # MongoDB database
     image: mongo:7.0.12
     ports:
       - "27017:27017"
     volumes:
       - COS326_mongo_data:/data/db
 
-  basex:
+  basex: # BaseX database
     image: basex/basexhttp
     ports:
       - "1984:1984"
@@ -29,7 +29,7 @@ services:
       - COS326_basex_repo:/srv/basex/repo
       - COS326_basex_webapp:/srv/basex/webapp
 
-  neo4j:
+  neo4j: # Neo4j database
     image: neo4j:5.9.0
     environment:
       NEO4J_AUTH: "neo4j/password123" # user/password
@@ -39,13 +39,14 @@ services:
     volumes:
       - COS326_neo4j_data:/data
 
-  objectdb:
+  objectdb: # ObjectDB database
     build: ./objectdb
     ports:
       - "6136:6136"
     volumes:
-      - COS326_objectdb_data:/opt/objectdb
+      - COS326_objectdb_data:/opt/objectdb # In particular, the database file is stored in /opt/objectdb/objectdb-2.9.0/db/ as .odb files
 
+# These volumes are used to persist the data of the databases
 volumes:
   COS326_pg_data:
   COS326_mongo_data:
