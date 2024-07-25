@@ -44,7 +44,7 @@ services:
     ports:
       - "6136:6136"
     volumes:
-      - COS326_objectdb_data:/opt/objectdb # In particular, the database file is stored in /opt/objectdb/objectdb-2.9.0/db/ as .odb files
+      - COS326_objectdb_data:/opt/objectdb # In particular, the database files are stored in /opt/objectdb/objectdb-2.9.0/db/ as .odb files
 
 # These volumes are used to persist the data of the databases
 volumes:
