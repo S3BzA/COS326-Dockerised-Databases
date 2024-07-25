@@ -44,7 +44,7 @@ services:
     ports:
       - "6136:6136"
     volumes:
-      - COS326_objectdb_data:/var/lib/objectdb
+      - COS326_objectdb_data:/opt/objectdb
 
 volumes:
   COS326_pg_data:
