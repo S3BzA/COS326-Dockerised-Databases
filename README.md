@@ -28,6 +28,8 @@ If you are using this repo, note that I will use this README as a means of commu
 
 Object DB is not available on Docker. I have downloaded the ObjectDB version 2.9.0 from the official website and stuck that .zip into the `/objectdb` directory with a `Dockerfile` that the `compose.yaml` uses. This spins up the objectdb container.
 
+In terms of connecting to and using the ObjectDB database, official documentation can be found [here](https://www.objectdb.com/database/overview). However for those of you that prefer a more pragmatic approach, here is a Gradle project maintained by a good friend of mine that should help speed you past the obscenities of the otherwise standard Maven alternatives: [ObjectDB Gradle Project](https://github.com/Vafdaf12/objectdb-gradle).
+
 ### PostgreSQL
 
 Requires authentication, which is specified in the compose.yaml file. Additionally, the ./initpg directory contains an init.sql file used to initialize the database with tables, data, enums, etc. This initialization script runs only if PostgreSQL detects that no database already exists. This ensures that the database is set up correctly on the first run but does not overwrite existing data on subsequent restarts.
