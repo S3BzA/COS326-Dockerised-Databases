@@ -1,0 +1,7 @@
+actor_id,movie_id,movie_title,role
+1,101,Avengers: Endgame,Tony Stark
+2,101,Avengers: Endgame,Steve Rogers
+3,101,Avengers: Endgame,Natasha Romanoff
+4,101,Avengers: Endgame,Bruce Banner
+5,101,Avengers: Endgame,Thor
+1,102,Iron Man,Tony Stark
